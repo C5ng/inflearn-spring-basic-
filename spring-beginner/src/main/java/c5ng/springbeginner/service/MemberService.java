@@ -3,14 +3,18 @@ package c5ng.springbeginner.service;
 import c5ng.springbeginner.domain.Member;
 import c5ng.springbeginner.repository.MemberRepository;
 import c5ng.springbeginner.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     } /* 외부에서 repository를 줌 DI */
